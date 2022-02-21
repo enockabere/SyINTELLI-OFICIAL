@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="main" id="top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-4 d-block"
+        data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="index.html"><img src="../../static/img/Logo/logo.png"
+                    height="50" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+            <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
+                    <li class="nav-item px-2">
+                        <a class="nav-link fw-medium active" href="{% url 'landing' %}">Home</a>
+                    </li>
+                    <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#prs">What We
+                            Do
+                        </a></li>
+                    <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link"
+                            href="#partners">Partners</a>
+                    </li>
+                    <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#">Contact
+                            Us</a></li>
+                </ul>
+                <form class="ps-lg-5"><a class="btn btn-light order-1 order-lg-0" href="#">Get Quote
+                    </a></form>
+
+            </div>
+        </div>
+    </nav>
+    <section id="solution">
+        <div class="bg-holder"
+            style="background-image:url(../../static/img/hero/hero_bg.png);background-position:center;background-size:cover;">
+        </div>
+        <div class="container">
+            <div class="row align-items-center min-vh-sm-75 solns">
+                <div class="col-md-5 col-lg-6 mb-6 order-0 order-md-1">
+                    <img class="img-fluid" width="350" src="../../static/img/hero/1.png" alt="..." />
+                </div>
+                <div class="col-md-7 col-lg-6 text-md-start text-center">
+                    <h1 class="text-light fs-md-5 fs-lg-6">What We Do</h1>
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Services</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pr-sec" id="prs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xxl-5 text-center mx-auto mb-5 ">
+                    <h2>Customized Solutions for Every Business</h2>
+                    <p class="mt-3">Do you need to enhance efficiency by automating all your business processes into a
+                        single unified application/platform? Do you want to increase visibility across the entire
+                        organization to improve your decision-making process? </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% for res in res %}
+                <div class="col-md-12">
+                    <div class="accordion-container">
+                        <div class="accordion accods" id="accordionExample">
+                            <div class="accordion-item cards">
+                                <div class="card-header" id="headingOne">
+                                    <span>{{res.name}}</span>
+                                    <button data-bs-target="#acco{{res.id}}" aria-expanded="false"
+                                        class="accordion-button" data-bs-toggle="collapse" id="accs"></button>
+                                </div>
+                                <div id="acco{{res.id}}" class="accordion-collapse collapse"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        {{res.description}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="quotes">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="../../static/img/about/1.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-8">
+                    <div class="text-center mx-auto mb-5 ">
+                        <h2>Interested with any of this service?</h2>
+                        <p class="mt-3">Do you need to enhance efficiency by automating all your business processes into
+                            a
+                            single unified application/platform? Do you want to increase visibility across the entire
+                            organization to improve your decision-making process? </p>
+                        <a class="btn btn-primary" href="#">Get Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pb-lg-0 pt-md-8 py-0" id="partners">
+        <div class="row">
+            <div class="col-lg-6 col-xxl-5 text-center mx-auto mb-2">
+                <h2>Our Partners</h2>
+                <p class="mb-5">Feedbacks from our happy users. Become one of them. </p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center justify-content-xl-between py-5 border-klean">
+                <div class="col-auto col-md-4 col-lg-auto my-3 text-xl-start"><img
+                        src="../../static/img/partners/a1.png" height="60" alt="..." /></div>
+                <div class="col-auto col-md-4 col-lg-auto my-3 text-xl-start"><img
+                        src="../../static/img/partners/a2.png" height="60" alt="..." /></div>
+                <div class="col-auto col-md-4 col-lg-auto my-3 text-xl-start"><img
+                        src="../../static/img/partners/a3.png" height="60" alt="..." /></div>
+                <div class="col-auto col-md-4 col-lg-auto my-3 text-xl-start"><img
+                        src="../../static/img/partners/a4.png" height="60" alt="..." /></div>
+                <div class="col-auto col-md-4 col-lg-auto my-3 text-xl-start"><img
+                        src="../../static/img/partners/a5.png" height="60" alt="..." /></div>
+            </div>
+        </div>
+    </section>
+    {% include 'footer.html' %}
+</main>
+{% endblock %}

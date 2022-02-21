@@ -9,21 +9,18 @@
                     <h5 class="lh-lg fw-bold text-white">
                         Cybersecurity</h5>
                     <ul class="list-unstyled mb-md-4 mb-lg-0">
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">About Cyber Security</a>
                         </li>
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Our Offers</a></li>
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Our Offers</a></li>
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Our Offers</a></li>
+                        {% for res in all %}
+                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="{% url 'solution' res.id %}"><i
+                                    class="las la-angle-right"></i> {{res.category}}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="col-6 col-md-4 col-xl-3 mb-3">
-                    <h5 class="lh-lg fw-bold text-white">IT Project consulting</h5>
-                    <ul class="list-unstyled mb-md-4 mb-lg-0">
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">About </a></li>
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Our Offers</a></li>
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Our Offers</a></li>
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Our Offers</a></li>
-                    </ul>
+                    <h5 class="lh-lg fw-bold text-white">WORKING HOURS</h5>
+                    <p class="text-light">We work 7 days a week, every day excluding major holidays. Contact us if you
+                        have an emergency,
+                        with our Hotline and Contact form.</p>
                 </div>
                 <div class="col-6 col-md-4 col-xl-3 mb-3">
                     <h5 class="lh-lg fw-bold text-white">SUPPORT</h5>
@@ -61,7 +58,8 @@
                             <path
                                 d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z">
                             </path>
-                        </svg>&nbsp;by&nbsp;<a class="text-200 fw-bold" href="" target="_blank">Enock Abere
+                        </svg>&nbsp;by&nbsp;<a class="text-200 fw-bold"
+                            href="https://github.com/enockabere/SyINTELLI-OFICIAL" target="_blank">Enock Abere
                         </a>
                     </p>
                 </div>

@@ -10,16 +10,30 @@
                         aria-current="page" href="#home">Home</a></li>
                 <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#about">About Us</a>
                 </li>
-                <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#services">What We
+                <li>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle drops" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            What we do
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            {% for res in all %}
+                            <li><a class="dropdown-item" href="{% url 'solution' res.id %}"><i
+                                        class="las la-angle-right"></i> {{res.category}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item px-2"><a class="nav-link" href="#services">What We
                         Do
                     </a></li>
                 <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#partners">Partners</a>
                 </li>
                 <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#help">Contact
                         Us</a></li>
+
             </ul>
-            <form class="ps-lg-5"><a class="btn btn-light order-1 order-lg-0" href="#pricingTable">Get Quote
-                </a></form>
+
         </div>
     </div>
 </nav>

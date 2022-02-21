@@ -165,3 +165,150 @@
 .test-img img {
     border-radius: 50%;
 }
+
+#solution {
+    max-height: 60vh;
+}
+
+.solns {
+    margin-top: -6rem;
+}
+
+.sol-head {
+    border-left: 4px solid var(--main3--);
+    height: 20px;
+}
+
+.sol-head h5 {
+    text-transform: uppercase;
+    color: var(--bs-dark);
+    padding-left: 4px;
+}
+
+.sol-card {
+    margin-top: 1rem;
+    background: var(--main3--);
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    padding: .8rem;
+}
+
+.sol-card p {
+    color: white;
+
+}
+
+.sol-not {
+    margin-top: 1rem;
+    background: var(--main2-color);
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    padding: .8rem;
+}
+
+.sol-card p {
+    color: white;
+
+}
+
+.accordion-container {
+    margin: 10px 0;
+}
+
+.accods {
+    box-shadow: 0 40px 60px -20px rgba(12, 5, 62, 0.15);
+    border: solid 1px #e9e8f3;
+}
+
+.accods .cards {
+    border-radius: 0;
+    margin: 0;
+}
+
+.accods .cards:first-child {
+    border-bottom: solid 1px #e9e8f3;
+}
+
+.accods .cards:not(:first-of-type):not(:last-of-type) {
+    border-bottom: solid 1px #e9e8f3;
+}
+
+.accods .card-header {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.6;
+    background-color: #fff;
+    border-radius: 0;
+    color: #261c6a;
+    padding: 36px 32px;
+    border-bottom-width: 0;
+}
+
+.accods .card-header:hover {
+    color: #4e22d0;
+}
+
+.accods .card:hover {
+    z-index: 99999;
+    box-shadow: 0 20px 40px -20px rgba(12, 5, 62, 0.4);
+}
+
+.accods .card-header span {
+    display: inline-block;
+    width: calc(100% - 60px);
+}
+
+.accods .card-header button {
+    box-shadow: none;
+    width: 30px;
+    float: right;
+    background: none !important;
+    box-shadow: none !important;
+    outline: none;
+    border: none;
+}
+
+.accods .card-header button:focus {
+    outline: none;
+    box-shadow: none;
+    background: none
+}
+
+.accods .card-header+.list-group .list-group-item:first-child {
+    border-top: 1px;
+}
+
+.accordion-button {
+    color: red;
+}
+
+.pr-sec {
+    background: url(../img/5.png);
+}
+
+.quotes {
+    background: url(../img/1.png);
+}
+
+.drops {
+    background: none;
+    outline: none;
+    box-shadow: none;
+    color: #BDBDBD;
+}
+
+.drops:hover {
+    background: none;
+    outline: none;
+    box-shadow: none;
+    color: #BDBDBD;
+}
+
+.drops:focus {
+    background: none;
+    outline: none;
+    box-shadow: none;
+    color: #BDBDBD;
+}
