@@ -1,0 +1,167 @@
+:root {
+    --main--color: #095fb8;
+    --main2-color: #95c1e8;
+    --main3--: #600606;
+    --bs-blue: #424D83;
+    --bs-indigo: #6237FF;
+    --bs-purple: #A1B0FC;
+    --bs-pink: #D42DA3;
+    --bs-red: #FD4032;
+    --bs-orange: #F17228;
+    --bs-yellow: #FFC928;
+    --bs-green: #79B93C;
+    --bs-teal: #53F283;
+    --bs-cyan: #24FFEA;
+    --bs-white: #FFFEFE;
+    --bs-gray: #9E9E9E;
+    --bs-gray-dark: #616161;
+    --bs-primary: #A1B0FC;
+    --bs-secondary: #424D83;
+    --bs-success: #79B93C;
+    --bs-info: #24FFEA;
+    --bs-warning: #FFC928;
+    --bs-danger: #FD4032;
+    --bs-light: #F9FAFD;
+    --bs-dark: #23242A;
+    --bs-font-sans-serif: "Nunito", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --bs-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 254, 254, 0.15), rgba(255, 254, 254, 0));
+}
+
+.about-active {
+    background: var(--main--color);
+}
+
+.about-active .card-header i {
+    color: #fff;
+    font-size: 2.9rem;
+    margin-top: 1rem;
+}
+
+.about-active hr {
+    width: 20%;
+    height: .5rem;
+    color: #fff;
+}
+
+.about-active .card-title h5 {
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.about-active .card-text {
+    color: var(--bs-white);
+}
+
+.about-card {
+    background: #e4e7e7;
+    border-color: #e4e7e7;
+}
+
+.about-card:hover {
+    background: var(--main--color);
+}
+
+.about-card:hover.about-card .card-header i {
+    color: #fff;
+    font-size: 2.9rem;
+    margin-top: 1rem;
+}
+
+.about-card:hover.about-card hr {
+    width: 20%;
+    height: .5rem;
+    color: #fff;
+}
+
+.about-card:hover.about-card .card-title h5 {
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.about-card:hover.about-card .card-text {
+    color: var(--bs-white);
+}
+
+.about-card .card-header i {
+    color: var(--bs-dark);
+    font-size: 2.9rem;
+    margin-top: 1rem;
+}
+
+.about-card hr {
+    width: 20%;
+    height: .5rem;
+    color: var(--main--color);
+}
+
+.about-card .card-title h5 {
+    color: var(--bs-dark);
+    font-size: 1.8rem;
+}
+
+.about-card .card-text {
+    color: var(--bs-gray-dark);
+}
+
+.section-header h4 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.section-header button {
+    background: var(--main--color);
+    border-color: var(--main--color);
+    color: white;
+}
+
+.about-images {
+    height: 50px;
+}
+
+.join-card {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.join-card .emoji {
+    background: var(--main--color);
+    padding: 1rem;
+    border-radius: 30% 50% 70% 30% / 30% 30% 70% 70%;
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+.join-card .emoji i {
+    font-size: 2rem;
+    color: white;
+}
+
+.join-card h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem
+}
+
+.join-card h3:hover {
+    color: var(--main3--);
+}
+
+.join-card p {
+    color: #333;
+}
+
+#pricingTable {
+    background: url(../img/5.png);
+    background-repeat: no-repeat;
+
+}
+
+#team {
+    margin-top: -2.5rem;
+}
+
+.test-img img {
+    border-radius: 50%;
+}
