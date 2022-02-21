@@ -14,9 +14,20 @@
                     <li class="nav-item px-2">
                         <a class="nav-link fw-medium active" href="{% url 'landing' %}">Home</a>
                     </li>
-                    <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#prs">What We
-                            Do
-                        </a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle drops" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                What we do
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                {% for res in all %}
+                                <li><a class="dropdown-item" href="{% url 'solution' res.id %}"><i
+                                            class="las la-angle-right"></i> {{res.category}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
                     <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link"
                             href="#partners">Partners</a>
                     </li>
@@ -39,7 +50,7 @@
                     <img class="img-fluid" width="350" src="../../static/img/hero/1.png" alt="..." />
                 </div>
                 <div class="col-md-7 col-lg-6 text-md-start text-center">
-                    <h1 class="text-light fs-md-5 fs-lg-6">What We Do</h1>
+                    <h1 class="text-light fs-md-5 fs-lg-6">{{topic.category}}</h1>
                     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
