@@ -104,7 +104,7 @@ var rgbaColor = function rgbaColor() {
 
 var colors = {
   primary: 'red',
-  secondary: 'red',
+  secondary: '#095fb8',
   success: '#00d27a',
   info: '#27bcfd',
   warning: '#f5803e',
