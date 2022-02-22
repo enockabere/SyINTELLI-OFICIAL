@@ -104,7 +104,7 @@ var rgbaColor = function rgbaColor() {
 
 var colors = {
   primary: 'red',
-  secondary: '#095fb8',
+  secondary: 'red',
   success: '#00d27a',
   info: '#27bcfd',
   warning: '#f5803e',
@@ -384,11 +384,6 @@ var navbarInit = function navbarInit() {
     });
   }
 };
-/* -------------------------------------------------------------------------- */
-
-/*                                Scroll To Top                               */
-
-/* -------------------------------------------------------------------------- */
 
 
 var scrollToTop = function scrollToTop() {
