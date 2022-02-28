@@ -26,16 +26,17 @@
                                             class="las la-angle-right"></i> {{res.category}}</a></li>
                                 {% endfor %}
                             </ul>
+
                         </div>
                     </li>
                     <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link"
                             href="#partners">Partners</a>
                     </li>
-                    <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#">Contact
+                    <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#conts">Contact
                             Us</a></li>
                 </ul>
-                <form class="ps-lg-5"><a class="btn btn-light order-1 order-lg-0" href="#">Get Quote
-                    </a></form>
+                <a class="btn btn-light order-1 order-lg-0" href="#quote">Get Quote
+                </a>
 
             </div>
         </div>
@@ -48,6 +49,22 @@
             <div class="row align-items-center min-vh-sm-75 solns">
                 <div class="col-md-5 col-lg-6 mb-6 order-0 order-md-1">
                     <img class="img-fluid" width="350" src="../../static/img/hero/1.png" alt="..." />
+                    {% if messages %}
+                    {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <div class="alert alert-dismissible fade show all-alert succ" role="alert">
+                        <strong>Successfully Sent!</strong>{{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <div class="alert alert-dismissible fade show all-alert warns" role="alert">
+                        <strong>Failed!</strong> {{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
                 </div>
                 <div class="col-md-7 col-lg-6 text-md-start text-center">
                     <h1 class="text-light fs-md-5 fs-lg-6">{{topic.category}}</h1>
@@ -57,6 +74,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Services</li>
                         </ol>
                     </nav>
+
                 </div>
             </div>
         </div>
@@ -98,7 +116,7 @@
             </div>
         </div>
     </section>
-    <section class="quotes">
+    <section class="quotes" id="quote">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -111,9 +129,169 @@
                             a
                             single unified application/platform? Do you want to increase visibility across the entire
                             organization to improve your decision-making process? </p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">Get Quote
+                        <button type="button" class="btn btn-primary" id="quoteBtn">Get Quote
                         </button>
+                    </div>
+                    <form action="{% url 'solution' topic.id %} " method="post" class="myForm needs-validation"
+                        style="display:none" novalidate>
+                        {% csrf_token %}
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" name="name" required>
+                                <div class="invalid-feedback">
+                                    Field can't be Empty!
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" name="email" required>
+                                <div class="invalid-feedback">
+                                    Field can't be Empty!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  mb-3">
+                            <div class="col-md-12">
+                                <select class="form-select" name="service" required>
+                                    <option selected disabled value="">Select Service/Solution</option>
+                                    {% for res in emails %}
+                                    <option value="{{res.name}}">{{res.name}}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="invalid-feedback">
+                                    Field can't be Empty!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label class="form-label">Comment</label>
+                                <textarea class="form-control" name="subject" rows="3" required></textarea>
+                                <div class="invalid-feedback">
+                                    Field can't be Empty!
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Request</button>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="contact3 py-5 px-3">
+                            <div class="row no-gutters">
+                                <div class="container">
+                                    <div class="row" id="conts">
+                                        <div class="col-lg-6">
+                                            <div class="contact-box ml-3">
+                                                <h1 class="font-weight-light mt-2">Quick Contact</h1>
+                                                <form class="mt-4 needs-validation"
+                                                    action="{% url 'contact' topic.id %} " method="post" novalidate>
+                                                    {% csrf_token %}
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mt-2">
+                                                                <input class="form-control" type="text"
+                                                                    placeholder="name" name="name" required>
+                                                                <div class="invalid-feedback">
+                                                                    Field can't be Empty!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mt-2">
+                                                                <input class="form-control" type="email"
+                                                                    placeholder="email address" name="email" required>
+                                                                <div class="invalid-feedback">
+                                                                    Field can't be Empty!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mt-2">
+                                                                <input class="form-control" type="text"
+                                                                    placeholder="phone" name="phone" required>
+                                                                <div class="invalid-feedback">
+                                                                    Field can't be Empty!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mt-2">
+                                                                <textarea class="form-control" rows="3"
+                                                                    placeholder="message" name="message"
+                                                                    required></textarea>
+                                                                <div class="invalid-feedback">
+                                                                    Field can't be Empty!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <button type="submit"
+                                                                class="btn btn-danger-gradiant mt-3 text-white border-0 px-3 py-2"><span>
+                                                                    SUBMIT</span></button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="card-shadow">
+                                                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/2.jpg"
+                                                    class="img-fluid">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="card mt-4 border-0 mb-4">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4">
+                                                        <div class="card-body d-flex align-items-center c-detail pl-0">
+                                                            <div class="mr-3 align-self-center">
+                                                                <img
+                                                                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon1.png">
+                                                            </div>
+                                                            <div class="">
+                                                                <h6 class="font-weight-medium">Address</h6>
+                                                                <p class=""> Nairobi</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4">
+                                                        <div class="card-body d-flex align-items-center c-detail">
+                                                            <div class="mr-3 align-self-center">
+                                                                <img
+                                                                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon2.png">
+                                                            </div>
+                                                            <div class="">
+                                                                <h6 class="font-weight-medium">Phone</h6>
+                                                                <p class=""> 0743332560
+                                                                    <br> 0743332560</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4">
+                                                        <div class="card-body d-flex align-items-center c-detail">
+                                                            <div class="mr-3 align-self-center">
+                                                                <img
+                                                                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon3.png">
+                                                            </div>
+                                                            <div class="">
+                                                                <h6 class="font-weight-medium">Email</h6>
+                                                                <p class="">
+                                                                    info@sy-intelli.com
+                                                                    <br> sales@sy-intelli.com
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,50 +319,28 @@
             </div>
         </div>
     </section>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="{% url 'solution' topic.id %} " method="post">
-                        {% csrf_token %}
-                        <div class="col-md-12">
-                            <label for="" class="form-label">Your Name </label>
-                            <input type="text" class="form-control" name="name">
-                        </div>
-                        <div class="col-md-12">
-                            <label for="" class="form-label">Your Email</label>
-                            <input type="email" class="form-control" name="email">
-                        </div>
-
-                        <div class="col-md-12">
-                            <select class="form-select" name="service">
-                                <option selected disabled value="">Select Service/Solution</option>
-                                {% for res in emails %}
-                                <option value="{{res.name}}">{{res.name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="" class="form-label">Comment</label>
-                            <textarea class="form-control" name="subject" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Request</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
     {% include 'footer.html' %}
 </main>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
 {% endblock %}

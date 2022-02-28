@@ -7,10 +7,32 @@
         <div class="bg-holder"
             style="background-image:url(../../static/img/hero/hero_bg.png);background-position:center;background-size:cover;">
         </div>
+        <style>
+            .all-alert {
+                margin-top: -13rem !important;
+            }
+        </style>
         <div class="container">
             <div class="row align-items-center min-vh-50 min-vh-sm-75">
                 <div class="col-md-5 col-lg-6 order-0 order-md-1"><img class="w-100" src="../../static/img/hero/1.png"
-                        alt="..." /></div>
+                        alt="..." />
+                    {% if messages %}
+                    {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <div class="alert alert-dismissible fade show all-alert succ" role="alert">
+                        <strong>Successfully Sent!</strong>{{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <div class="alert alert-dismissible fade show all-alert warns" role="alert">
+                        <strong>Failed!</strong> {{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </div>
                 <div class="col-md-7 col-lg-6 text-md-start text-center">
                     <h1 class="text-light fs-md-5 fs-lg-6">Industry Leading IT Services Solutions</h1>
                     <p class="text-light">Deep industry expertise, diversity in IT skill sets, tailored client
@@ -430,6 +452,128 @@
             </div>
         </div>
     </section>
+    <section class="cont" id="cont">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="contact3 py-5 px-3">
+                        <div class="row no-gutters">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="contact-box ml-3">
+                                            <h1 class="font-weight-light mt-2">Quick Contact</h1>
+                                            <form class="mt-4 needs-validation" action="{% url 'landing' %} "
+                                                method="post" novalidate>
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mt-2">
+                                                            <input class="form-control" type="text" placeholder="name"
+                                                                name="name" required>
+                                                            <div class="invalid-feedback">
+                                                                Field can't be Empty!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mt-2">
+                                                            <input class="form-control" type="email"
+                                                                placeholder="email address" name="email" required>
+                                                            <div class="invalid-feedback">
+                                                                Field can't be Empty!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mt-2">
+                                                            <input class="form-control" type="text" placeholder="phone"
+                                                                name="phone" required>
+                                                            <div class="invalid-feedback">
+                                                                Field can't be Empty!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mt-2">
+                                                            <textarea class="form-control" rows="3"
+                                                                placeholder="message" name="message"
+                                                                required></textarea>
+                                                            <div class="invalid-feedback">
+                                                                Field can't be Empty!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <button type="submit"
+                                                            class="btn btn-danger-gradiant mt-3 text-white border-0 px-3 py-2"><span>
+                                                                SUBMIT</span></button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="card-shadow">
+                                            <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/2.jpg"
+                                                class="img-fluid">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="card mt-4 border-0 mb-4">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="card-body d-flex align-items-center c-detail pl-0">
+                                                        <div class="mr-3 align-self-center">
+                                                            <img
+                                                                src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon1.png">
+                                                        </div>
+                                                        <div class="">
+                                                            <h6 class="font-weight-medium">Address</h6>
+                                                            <p class=""> Nairobi</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="card-body d-flex align-items-center c-detail">
+                                                        <div class="mr-3 align-self-center">
+                                                            <img
+                                                                src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon2.png">
+                                                        </div>
+                                                        <div class="">
+                                                            <h6 class="font-weight-medium">Phone</h6>
+                                                            <p class=""> 0743332560
+                                                                <br> 0743332560</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div class="card-body d-flex align-items-center c-detail">
+                                                        <div class="mr-3 align-self-center">
+                                                            <img
+                                                                src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon3.png">
+                                                        </div>
+                                                        <div class="">
+                                                            <h6 class="font-weight-medium">Email</h6>
+                                                            <p class="">
+                                                                info@sy-intelli.com
+                                                                <br> sales@sy-intelli.com
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="pb-lg-0 pt-md-8 py-0" id="partners">
         <div class="row">
             <div class="col-lg-6 col-xxl-5 text-center mx-auto mb-2">
@@ -454,4 +598,26 @@
     </section>
     {% include 'footer.html' %}
 </main>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
 {% endblock %}
