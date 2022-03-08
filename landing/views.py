@@ -1,4 +1,5 @@
 from email import message
+import threading
 from django.http import HttpResponse
 from django.shortcuts import redirect, render, HttpResponse
 from . models import ALL_Category, Offers
@@ -6,8 +7,17 @@ from django.core.mail import send_mail, BadHeaderError, EmailMessage
 from  django.conf import settings
 from django.contrib import messages
 from datetime import date
+from django.template.loader import render_to_string
 
+class EmailThread(threading.Thread):
+    def __init__(self, email):
+        self.email = email
+        threading.Thread.__init__(self)
 
+    def run(self):
+        self.email.send()
+        
+        
 # Create your views here.
 def landing(request):
     all = ALL_Category.objects.all()
@@ -28,19 +38,24 @@ def landing(request):
             return redirect('landing')
     if name and email and phone and message:
         try:
-            send_mail(
-                f"General Enquiry",
-                f"SY-INTELLI CONSULTING, \n\n{message}. \n\nKind Regards,\n{name} \n{phone}.",
-                settings.DEFAULT_FROM_EMAIL,
-                ['info@sy-intelli.com'],
-                fail_silently=False
-            )
+            email_subject = 'General Enquiry'
+            email_body = render_to_string('mails/enquiry.html', {
+            "user": name,
+            "message": message,
+            'phone': phone,
+            "email":email
+            })
+            email = EmailMessage(subject=email_subject, body=email_body,
+                             from_email=settings.DEFAULT_FROM_EMAIL, to=['info@sy-intelli.com'])
+
+            EmailThread(email).start()
             messages.success(request, "Thank you for contacting us, we will respond to your request as soon as possible.")
             return redirect('landing')
         except BadHeaderError:
             return redirect('landing')
     ctx = {"all":all,"year":year}
     return render(request,"index.html",ctx)
+
 def solution(request,pk):
     todays_date = date.today()
     year= todays_date.year
@@ -63,17 +78,21 @@ def solution(request,pk):
             return redirect('solution', pk=id)
     if name and email and service and subject:
         try:
-            send_mail(
-                f"Quotation for {service}",
-                f"SY-INTELLI CONSULTING, \n\nTrust you are well, \n\nI'm requesting for a quotation on {service} to be sent to {email}. \n\nWith the following comments: {subject}.\n\nBest regards \n{name}.",
-                settings.DEFAULT_FROM_EMAIL,
-                ['sales@sy-intelli.com'],
-                fail_silently=False
-            )
+            email_subject = f'Quotation for {service}'
+            email_body = render_to_string('mails/quote.html', {
+            "user": name,
+            "message": subject,
+            'service': service,
+            "email":email
+            })
+            email = EmailMessage(subject=email_subject, body=email_body,
+                             from_email=settings.DEFAULT_FROM_EMAIL, to=['sales@sy-intelli.com'])
+            EmailThread(email).start()
+
             messages.success(request, "Thank you for contacting us, we will respond to your request as soon as possible.")
-            return redirect('solution', pk=id) 
+            return redirect('solution', pk=pk) 
         except BadHeaderError:
-            return redirect('solution', pk=id)    
+            return redirect('solution', pk=pk)    
     ctx = {"res":offer,"topic":topic,
            "all":all,"emails":emails,
            "year":year}
@@ -95,13 +114,17 @@ def contact(request,pk):
             return redirect('solution', pk=pk)
     if name and email and phone and message:
         try:
-            send_mail(
-                f"General Enquiry",
-                f"SY-INTELLI CONSULTING, \n\n{message}. \n\nKind Regards,\n{name} \n{phone}.",
-                settings.DEFAULT_FROM_EMAIL,
-                ['info@sy-intelli.com'],
-                fail_silently=False
-            )
+            email_subject = 'General Enquiry'
+            email_body = render_to_string('mails/enquiry.html', {
+            "user": name,
+            "message": message,
+            'phone': phone,
+            "email":email
+            })
+            email = EmailMessage(subject=email_subject, body=email_body,
+                             from_email=settings.DEFAULT_FROM_EMAIL, to=['info@sy-intelli.com'])
+
+            EmailThread(email).start()
             messages.success(request, "Thank you for contacting us, we will respond to your request as soon as possible.")
             return redirect('solution',pk=pk)  
         except BadHeaderError:
