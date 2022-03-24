@@ -169,7 +169,7 @@
 }
 
 #solution {
-    max-height: 70vh;
+    max-height: 90vh;
 }
 
 .all-alert {
@@ -187,7 +187,7 @@
 }
 
 .solns {
-    margin-top: -6rem;
+    margin-top: -1rem;
 }
 
 .sol-head {
@@ -448,4 +448,83 @@
 #myBtn:hover {
     background-color: var(--main3--);
     /* Add a dark-grey background on hover */
+}
+
+@media only screen and (max-width: 768px) {
+    #heroImg {
+        margin-top: 7rem;
+    }
+
+    #heroImgs {
+        padding-top: 7rem;
+    }
+
+    .heroTexts {
+        margin-top: 2rem;
+    }
+
+    #solution {
+        max-height: 100vh;
+    }
+
+}
+
+@media only screen and (max-width: 425px) {
+    #heroImg {
+        margin-top: 8rem;
+        height: 350px;
+        width: 350px;
+    }
+
+    #heroImgs {
+        display: none;
+    }
+
+    .show-text {
+        padding-top: 7rem;
+    }
+
+    #solution {
+        max-height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 442px) {
+    #heroImg {
+        margin-top: 9rem;
+        height: 330px;
+        width: 330px;
+    }
+
+    #solution {
+        max-height: 100vh;
+    }
+
+    #heroImgs {
+        display: none;
+    }
+
+    .show-text {
+        padding-top: 7rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #heroImg {
+        margin-top: 10rem;
+        height: 300px;
+        width: 300px;
+    }
+
+    #solution {
+        max-height: 100vh;
+    }
+
+    #heroImgs {
+        display: none;
+    }
+
+    .show-text {
+        padding-top: 7rem;
+    }
 }

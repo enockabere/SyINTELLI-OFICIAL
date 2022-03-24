@@ -14,8 +14,8 @@
         </style>
         <div class="container">
             <div class="row align-items-center min-vh-50 min-vh-sm-75">
-                <div class="col-md-5 col-lg-6 order-0 order-md-1"><img class="w-100" src="../../static/img/hero/1.png"
-                        alt="..." />
+                <div class="col-md-5 col-lg-6 order-0 order-md-1">
+                    <img class="w-100" id="heroImg" src="../../static/img/hero/1.png" alt="..." />
                     {% if messages %}
                     {% for message in messages %}
                     {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
@@ -33,7 +33,7 @@
                     {% endfor %}
                     {% endif %}
                 </div>
-                <div class="col-md-7 col-lg-6 text-md-start text-center">
+                <div class="col-md-7 col-lg-6 text-md-start text-center heroTexts">
                     <h1 class="text-light fs-md-5 fs-lg-6">Industry Leading IT Services Solutions</h1>
                     <p class="text-light">Deep industry expertise, diversity in IT skill sets, tailored client
                         solutions and a
