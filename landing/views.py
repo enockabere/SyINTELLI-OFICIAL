@@ -33,6 +33,7 @@ def landing(request):
             email = request.POST.get('email')
             phone = request.POST.get('phone')
             message = request.POST.get('message')
+            print(name,email,phone,message)
         except ValueError:
             messages.error(request, "Not sent. Invalid Input, Try Again!!")
             return redirect('landing')
@@ -49,7 +50,6 @@ def landing(request):
                              from_email=settings.DEFAULT_FROM_EMAIL, to=['info@sy-intelli.com'])
 
             EmailThread(email).start()
-            messages.success(request, "Thank you for contacting us, we will respond to your request as soon as possible.")
             return redirect('landing')
         except BadHeaderError:
             return redirect('landing')
@@ -73,6 +73,7 @@ def solution(request,pk):
             email = request.POST.get('email')
             service = request.POST.get('service')
             subject = request.POST.get('subject')
+            
         except ValueError:
             messages.error(request, "Not sent. Invalid Input, Try Again!!")
             return redirect('solution', pk=id)
@@ -88,8 +89,6 @@ def solution(request,pk):
             email = EmailMessage(subject=email_subject, body=email_body,
                              from_email=settings.DEFAULT_FROM_EMAIL, to=['sales@sy-intelli.com'])
             EmailThread(email).start()
-
-            messages.success(request, "Thank you for contacting us, we will respond to your request as soon as possible.")
             return redirect('solution', pk=pk) 
         except BadHeaderError:
             return redirect('solution', pk=pk)    
@@ -109,6 +108,7 @@ def contact(request,pk):
             email = request.POST.get('email')
             phone = request.POST.get('phone')
             message = request.POST.get('message')
+            print(name,email,phone,message)
         except ValueError:
             messages.error(request, "Not sent. Invalid Input, Try Again!!")
             return redirect('solution', pk=pk)
@@ -125,7 +125,6 @@ def contact(request,pk):
                              from_email=settings.DEFAULT_FROM_EMAIL, to=['info@sy-intelli.com'])
 
             EmailThread(email).start()
-            messages.success(request, "Thank you for contacting us, we will respond to your request as soon as possible.")
             return redirect('solution',pk=pk)  
         except BadHeaderError:
             return redirect('solution',pk=pk)    

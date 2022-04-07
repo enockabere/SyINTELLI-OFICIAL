@@ -534,3 +534,16 @@
         display: none;
     }
 }
+
+#response{
+    color: var(--main--color);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight:bold
+}
+#responseNot{
+    color: var(--bs-red);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight:bold
+}
