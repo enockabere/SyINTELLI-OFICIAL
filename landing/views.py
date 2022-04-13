@@ -2,7 +2,7 @@ from email import message
 import threading
 from django.http import HttpResponse
 from django.shortcuts import redirect, render, HttpResponse
-from . models import Category, Offers
+from . models import Category, Offers,caseStudy
 from django.core.mail import send_mail, BadHeaderError, EmailMessage
 from  django.conf import settings
 from django.contrib import messages
@@ -21,6 +21,8 @@ class EmailThread(threading.Thread):
 # Create your views here.
 def landing(request):
     all = Category.objects.all()
+    
+    study = caseStudy.objects.all()
     todays_date = date.today()
     year= todays_date.year
     name= ''
@@ -53,7 +55,7 @@ def landing(request):
             return redirect('landing')
         except BadHeaderError:
             return redirect('landing')
-    ctx = {"all":all,"year":year}
+    ctx = {"all":all,"year":year, "study":study}
     return render(request,"index.html",ctx)
 
 def solution(request,pk):
@@ -129,12 +131,40 @@ def contact(request,pk):
             return redirect('solution',pk=pk)    
     return redirect('solution', pk=pk)    
 def about_us (request):
-    return render(request,'about.html')
+    todays_date = date.today()
+    year= todays_date.year
+    all = Category.objects.all()
+    ctx = {"year":year,"all":all}
+    return render(request,'about.html',ctx)
 
-def CaseStudy (request):
-    return render(request,'case.html')
+def CaseStudy (request,pk):
+    todays_date = date.today()
+    year= todays_date.year
+    case = caseStudy.objects.get(id=pk)
+    all = Category.objects.all()
+    ctx = {"res":case,"year":year,"all":all}
+    return render(request,'case.html',ctx)
 
 def Contact (request):
-    return render(request,'contact.html')
+    todays_date = date.today()
+    year= todays_date.year
+    all = Category.objects.all()
+    offer = Offers.objects.all()
+    ctx = {"year":year,"all":all,"offer":offer}
+    return render(request,'contact.html',ctx)
+
 def Services (request):
-    return render(request,'services.html')
+    todays_date = date.today()
+    year= todays_date.year
+    all = Category.objects.all()
+    offer = Offers.objects.all()
+    ctx = {"year":year,"all":all,"offer":offer}
+    return render(request,'services.html',ctx)
+
+def SingleService (request,pk):
+    todays_date = date.today()
+    year= todays_date.year
+    service = Offers.objects.get(id=pk)
+    all = Category.objects.all()
+    ctx = {"res":service,"year":year,"all":all}
+    return render(request,'single.html',ctx)

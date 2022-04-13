@@ -26,4 +26,15 @@ class Offers(models.Model):
     def __str__(self):
         return str(self.Name)
     
+class caseStudy(models.Model):
+    title = models.CharField(max_length=700,blank=True,verbose_name="Title")
+    sub_title = models.CharField(max_length=1000,blank=True,verbose_name="Sub Title")
+    Description = models.TextField()
+    
+    class  Meta: 
+        verbose_name_plural  =  "Case Study"
+    
+    def __str__(self):
+        return str(self.title)
+    
     

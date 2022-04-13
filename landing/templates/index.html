@@ -223,79 +223,27 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                {% for res in study %}
+                <div class="col-md-3 my-3">
                     <div class="card WhyCard h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Cyber Security</h5>
+                            <h5 class="card-title">{{res.title}}</h5>
                             <div class="whyimg mx-auto text-center">
-                                <img src="../../static/img/icons/cloud-hosting.png" class="img-fluid" alt="" srcset="">
+                                <img src="../../static/img/icons/1.png" class="img-fluid" alt="" srcset="">
                             </div>
                             <p class="card-text">
-                                Our product design service lets you prototype, test and validate your ideas
+                                {{res.Description|truncatechars:90}}
                             </p>
 
                             <div class="whys">
-                                <a href="{% url 'case' %}" class="btn btn-primary"><i class="las la-arrow-right"></i>
+                                <a href="{% url 'case' res.id %}" class="btn btn-primary"><i
+                                        class="las la-arrow-right"></i>
                                     LEARN MORE</a>
-
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card WhyCard h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Cyber Security</h5>
-                            <div class="whyimg mx-auto text-center">
-                                <img src="../../static/img/icons/cloud-hosting.png" class="img-fluid" alt="" srcset="">
-                            </div>
-                            <p class="card-text">
-                                Our product design service lets you prototype, test and validate your ideas
-                            </p>
-
-                            <div class="whys">
-                                <a href="#" class="btn btn-primary"><i class="las la-arrow-right"></i> LEARN MORE</a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card WhyCard h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Cyber Security</h5>
-                            <div class="whyimg mx-auto text-center">
-                                <img src="../../static/img/icons/cloud-hosting.png" class="img-fluid" alt="" srcset="">
-                            </div>
-                            <p class="card-text">
-                                Our product design service lets you prototype, test and validate your ideas
-                            </p>
-
-                            <div class="whys">
-                                <a href="#" class="btn btn-primary"><i class="las la-arrow-right"></i> LEARN MORE</a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card WhyCard h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Cyber Security</h5>
-                            <div class="whyimg mx-auto text-center">
-                                <img src="../../static/img/icons/cloud-hosting.png" class="img-fluid" alt="" srcset="">
-                            </div>
-                            <p class="card-text">
-                                Our product design service lets you prototype, test and validate your ideas
-                            </p>
-
-                            <div class="whys">
-                                <a href="#" class="btn btn-primary"><i class="las la-arrow-right"></i> LEARN MORE</a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

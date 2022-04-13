@@ -31,6 +31,9 @@
 
                         </div>
                     </li>
+                    <li class="nav-item px-2"><a class="nav-link" href="{% url 'services' %}">Service
+                            Gallery</a>
+                    </li>
                     <li class="nav-item px-2"><a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item px-2"><a class="nav-link" href="{% url 'contact' %}">Contact
@@ -50,11 +53,11 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-6 text-md-start text-center heroTexts">
-                    <h1 class="text-light fs-md-5 fs-lg-6">Service/Solution Gallery</h1>
+                    <h1 class="text-light fs-md-5 fs-lg-6">{{res.Name}}</h1>
                     <p class="text-light">Deep industry expertise, diversity in IT skill sets, tailored client
                         solutions and a
-                        personal touch to client challenges. </p><a class="btn btn-primary" href="{% url 'contact' %}"
-                        role="button">Get
+                        personal touch to client challenges. </p>
+                    <a class="btn btn-primary" href="{% url 'contact' %}" role="button">Get
                         In
                         Touch</a>
                 </div>
@@ -64,27 +67,20 @@
     <section class="about-section" id="prs">
         <div class="container">
             <div class="row">
-                {% for res in offer %}
-                <div class="col-md-3 my-2">
-                    <div class="card join-card p-3" style="border: 1px solid grey;">
-                        <div class="emoji">
-                            <i class="las la-desktop"></i>
-                        </div>
-                        <h3>
-                            {{res.Name}}
-                        </h3>
-                        <p>
-                            {{res.Description|truncatechars:90}}
+                <div class="col-md-12">
+                    <div class="abouts-card">
+                        <h5>{{res.Name}}</h5>
+                        <p class="about-copy">
+                            {{res.Description}}
                         </p>
-                        <div class="whys">
-                            <a href="{% url 'single' res.id %}" class="btn btn-primary"><i
-                                    class="las la-arrow-right"></i>
-                                LEARN MORE</a>
-
-                        </div>
                     </div>
+                    <p style="display: inline-block; color: #000; font-weight: bold;">Category:
+                        <span style="padding-right: 1rem; color: #095fb8; font-weight:normal;">{{res.Category}}</span>
+                    </p>
+                    <p style="display: inline-block; color: #000; font-weight: bold;">Type: <span
+                            style="color: #095fb8; font-weight:normal;">{{res.Types}}</span>
+                    </p>
                 </div>
-                {% endfor %}
             </div>
         </div>
     </section>

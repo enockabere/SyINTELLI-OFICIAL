@@ -6,7 +6,8 @@ urlpatterns= [
     path("rates/<int:pk>/", views.solution, name="solution"),
     path("contact/<int:pk>/", views.contact, name="contact"),
     path("about", views.about_us, name="about"),
-    path("CaseStudy", views.CaseStudy, name="case"),
+    path("CaseStudy/<int:pk>/", views.CaseStudy, name="case"),
     path("Contact", views.Contact, name="contact"),
     path("services", views.Services, name="services"),
+    path("SingleDetail/<int:pk>/", views.SingleService, name="single"),
     ]

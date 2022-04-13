@@ -53,11 +53,11 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-6 text-md-start text-center heroTexts">
-                    <h1 class="text-light fs-md-5 fs-lg-6">Cyber Security</h1>
+                    <h1 class="text-light fs-md-5 fs-lg-6">{{res.title}}</h1>
                     <p class="text-light">Deep industry expertise, diversity in IT skill sets, tailored client
                         solutions and a
-                        personal touch to client challenges. </p><a class="btn btn-primary" href="{% url 'contact' %}"
-                        role="button">Get
+                        personal touch to client challenges. </p>
+                    <a class="btn btn-primary" href="{% url 'contact' %}" role="button">Get
                         In
                         Touch</a>
                 </div>
@@ -69,18 +69,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="abouts-card">
-                        <h5>Hand-Built By Great Ideas</h5>
+                        <h5>{{res.sub_title}}</h5>
                         <p class="about-copy">
-                            <strong>SY-INTELLI CONSULTING</strong> is an emerging group of young, honest and reliable
-                            individuals
-                            willing to go an
-                            extra mile to put a smile on the face of our clients. We consult in Technology, ICT
-                            Advisory services
-                            and IT and Security Audit for banks, saccos, Microfinance, Insurance, Manufacturing, NGOs,
-                            Government
-                            institutions, Oil & Gas and Telcos in Kenya and Rwanda.
-                            We provide a vibrant combination of strategic IT consultancy services and technology
-                            skills.
+                            {{res.Description}}
                         </p>
                     </div>
                 </div>
