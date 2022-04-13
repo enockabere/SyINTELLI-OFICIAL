@@ -7,4 +7,6 @@ urlpatterns= [
     path("contact/<int:pk>/", views.contact, name="contact"),
     path("about", views.about_us, name="about"),
     path("CaseStudy", views.CaseStudy, name="case"),
+    path("Contact", views.Contact, name="contact"),
+    path("services", views.Services, name="services"),
     ]

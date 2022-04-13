@@ -7,7 +7,7 @@
             <div class="row min-vh-75 min-vh-xl-50 pt-10">
                 <div class="col-6 col-md-4 col-xl-3 mb-3">
                     <h5 class="lh-lg fw-bold text-white">
-                        Cybersecurity</h5>
+                        What We Do</h5>
                     <ul class="list-unstyled mb-md-4 mb-lg-0">
                         </li>
                         {% for res in all %}
@@ -23,12 +23,16 @@
                         with our Hotline and Contact form.</p>
                 </div>
                 <div class="col-6 col-md-4 col-xl-3 mb-3">
-                    <h5 class="lh-lg fw-bold text-white">SUPPORT</h5>
+                    <h5 class="lh-lg fw-bold text-white">Company</h5>
                     <ul class="list-unstyled mb-md-4 mb-lg-0">
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Help Center</a></li>
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">0743332560</a></li>
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#cont">Contact Us</a></li>
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Blog</a></li>
+                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="{% url 'landing' %}">Home</a>
+                        </li>
+                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="{% url 'about' %}">About Us</a>
+                        </li>
+                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="{% url 'contact' %}">Contact
+                                Us</a></li>
+                        <li class="lh-lg"><a class="text-200 text-decoration-none"
+                                href="{% url 'services' %}">Services</a></li>
                     </ul>
                 </div>
                 <div class="col-xl-3 mb-3">

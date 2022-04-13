@@ -14,8 +14,7 @@
                     <li class="nav-item px-2">
                         <a class="nav-link fw-medium active" href="{% url 'landing' %}">Home</a>
                     </li>
-                    <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link"
-                            href="{% url 'about' %}">About Us</a>
+                    <li class="nav-item px-2"><a class="nav-link" href="{% url 'about' %}">About Us</a>
                     </li>
                     <li>
                         <div class="dropdown">
@@ -32,9 +31,12 @@
 
                         </div>
                     </li>
-                    <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#">Blog</a>
+                    <li class="nav-item px-2"><a class="nav-link" href="{% url 'services' %}">Services
+                            Gallery</a>
                     </li>
-                    <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#conts">Contact
+                    <li class="nav-item px-2"><a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item px-2"><a class="nav-link" href="{% url 'contact' %}">Contact
                             Us</a></li>
                 </ul>
             </div>
@@ -200,35 +202,6 @@
                     $("#email").val("");
                     $("#service").val("");
                     $("#subject").val("");
-                }
-            })
-        } else {
-            alert('Not sent! Missing Input!!');
-        }
-    });
-    $(document).on('submit', '#contactForms', function (e) {
-        e.preventDefault();
-        let name = $("#name").val()
-        let email = $("#email").val()
-        let phone = $("#phone").val()
-        let message = $("#message").val()
-        if (name != '' && email != '' && phone != '' && message != '') {
-            $.ajax({
-                type: 'POST',
-                url: '{% url "contact" topic.id %}',
-                data: {
-                    name: name,
-                    email: email,
-                    phone: phone,
-                    message: message,
-                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
-                },
-                success: function () {
-                    $("p#response").append('Successfully Sent!');
-                    $("#name").val("");
-                    $("#email").val("");
-                    $("#phone").val("");
-                    $("#message").val("");
                 }
             })
         } else {

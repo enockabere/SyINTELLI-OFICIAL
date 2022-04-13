@@ -133,3 +133,8 @@ def about_us (request):
 
 def CaseStudy (request):
     return render(request,'case.html')
+
+def Contact (request):
+    return render(request,'contact.html')
+def Services (request):
+    return render(request,'services.html')
