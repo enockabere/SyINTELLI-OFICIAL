@@ -1,0 +1,70 @@
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
+
+:root {
+    --main--color: #095fb8;
+    --main2-color: #95c1e8;
+    --main3--: #600606;
+    --bs-blue: #424D83;
+    --bs-indigo: #6237FF;
+    --bs-purple: #A1B0FC;
+    --bs-pink: #D42DA3;
+    --bs-red: #FD4032;
+    --bs-orange: #F17228;
+    --bs-yellow: #FFC928;
+    --bs-green: #79B93C;
+    --bs-teal: #53F283;
+    --bs-cyan: #24FFEA;
+    --bs-white: #FFFEFE;
+    --bs-gray: #9E9E9E;
+    --bs-gray-dark: #616161;
+    --bs-primary: #A1B0FC;
+    --bs-secondary: #424D83;
+    --bs-success: #79B93C;
+    --bs-info: #24FFEA;
+    --bs-warning: #FFC928;
+    --bs-danger: #FD4032;
+    --bs-light: #F9FAFD;
+    --bs-dark: #23242A;
+    --bs-font-sans-serif: "Nunito", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --bs-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 254, 254, 0.15), rgba(255, 254, 254, 0));
+}
+.about-section{
+    background: linear-gradient(to right, whitesmoke, white);
+}
+.abouts-card h4{
+    font-size: 3rem;
+    color: var(--main3--);
+    font-family: var(--bs-font-sans-serif);
+    margin-bottom: 2rem;
+    letter-spacing: 3px;
+    /* text-transform: uppercase; */
+}
+.abouts-card h5{
+    font-size: 1.7rem;
+    color: #380404;
+    font-family: var(--bs-font-sans-serif);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.about-last{
+    background: var(--main3--);
+    padding-left:2rem;
+    padding-right:2rem;
+    margin-bottom: -4rem;
+}
+.about-last h2{
+    font-family: var(--bs-font-sans-serif);
+    color: white;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+.about-last p{
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}

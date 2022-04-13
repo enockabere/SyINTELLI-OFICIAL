@@ -2,7 +2,7 @@ from email import message
 import threading
 from django.http import HttpResponse
 from django.shortcuts import redirect, render, HttpResponse
-from . models import ALL_Category, Offers
+from . models import Category, Offers
 from django.core.mail import send_mail, BadHeaderError, EmailMessage
 from  django.conf import settings
 from django.contrib import messages
@@ -20,7 +20,7 @@ class EmailThread(threading.Thread):
         
 # Create your views here.
 def landing(request):
-    all = ALL_Category.objects.all()
+    all = Category.objects.all()
     todays_date = date.today()
     year= todays_date.year
     name= ''
@@ -59,9 +59,9 @@ def landing(request):
 def solution(request,pk):
     todays_date = date.today()
     year= todays_date.year
-    topic = ALL_Category.objects.get(id=pk)
-    offer = Offers.objects.filter(group=pk)
-    all = ALL_Category.objects.all()
+    topic = Category.objects.get(id=pk)
+    offer = Offers.objects.filter(Category=pk)
+    all = Category.objects.all()
     emails = Offers.objects.all() 
     name= ''
     email = ""
@@ -73,7 +73,6 @@ def solution(request,pk):
             email = request.POST.get('email')
             service = request.POST.get('service')
             subject = request.POST.get('subject')
-            
         except ValueError:
             messages.error(request, "Not sent. Invalid Input, Try Again!!")
             return redirect('solution', pk=id)
@@ -129,4 +128,5 @@ def contact(request,pk):
         except BadHeaderError:
             return redirect('solution',pk=pk)    
     return redirect('solution', pk=pk)    
-   
+def about_us (request):
+    return render(request,'about.html')

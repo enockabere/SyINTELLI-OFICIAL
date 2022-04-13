@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="main" id="top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-4 d-block"
+        data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="{% url 'landing' %}"><img
+                    src="../../static/img/Logo/logo.png" height="140" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+            <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
+                    <li class="nav-item px-2">
+                        <a class="nav-link fw-medium active" href="{% url 'landing' %}">Home</a>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle drops" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                What we do
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                {% for res in all %}
+                                <li><a class="dropdown-item" href="{% url 'solution' res.id %}"><i
+                                            class="las la-angle-right"></i> {{res.Category}}</a></li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+                    </li>
+                    <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#partners">Blog</a>
+                    </li>
+                    <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#conts">Contact
+                            Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="solution">
+        <div class="bg-holder" style="background:linear-gradient(to right, #640404, #095fb8) !important;">
+        </div>
+        <div class="container">
+            <div class="row align-items-center min-vh-50 min-vh-sm-75">
+                <div class="col-md-5 col-lg-6 order-0 order-md-1">
+                    <div id="particles">
+                        <!-- <img class="w-100" id="heroImg" src="../../static/img/hero/1.png" alt="..." /> -->
+                    </div>
+                </div>
+                <div class="col-md-7 col-lg-6 text-md-start text-center heroTexts">
+                    <h1 class="text-light fs-md-5 fs-lg-6">ABOUT SY-INTELLI CONSULTING</h1>
+                    <p class="text-light">Deep industry expertise, diversity in IT skill sets, tailored client
+                        solutions and a
+                        personal touch to client challenges. </p><a class="btn btn-primary" href="#" role="button">Get
+                        In
+                        Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-section" id="prs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="abouts-card">
+                        <h4>About Us</h4>
+                        <h5>Hand-Built By Great Ideas</h5>
+                        <p class="about-copy">
+                            <strong>SY-INTELLI CONSULTING</strong> is an emerging group of young, honest and reliable
+                            individuals
+                            willing to go an
+                            extra mile to put a smile on the face of our clients. We consult in Technology, ICT
+                            Advisory services
+                            and IT and Security Audit for banks, saccos, Microfinance, Insurance, Manufacturing, NGOs,
+                            Government
+                            institutions, Oil & Gas and Telcos in Kenya and Rwanda.
+                            We provide a vibrant combination of strategic IT consultancy services and technology
+                            skills.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="../../static/img/about/5.jpg" class="img-fluid" id="heroImg" alt="" srcset="">
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-md-6">
+                    <img src="../../static/img/about/6.jpg" class="img-fluid" id="heroImg" alt="" srcset="">
+                </div>
+                <div class="col-md-6">
+                    <div class="abouts-card">
+                        <h4>Our Culture</h4>
+                        <h5>Hand-Built By Great Ideas</h5>
+                        <p class="about-copy">
+                            <strong>SY-INTELLI CONSULTING</strong> is an emerging group of young, honest and reliable
+                            individuals
+                            willing to go an
+                            extra mile to put a smile on the face of our clients. We consult in Technology, ICT
+                            Advisory services
+                            and IT and Security Audit for banks, saccos, Microfinance, Insurance, Manufacturing, NGOs,
+                            Government
+                            institutions, Oil & Gas and Telcos in Kenya and Rwanda.
+                            We provide a vibrant combination of strategic IT consultancy services and technology
+                            skills.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row ">
+                <div class="col-md-6">
+                    <div class="abouts-card">
+                        <h4>SY-INTELLI Mission</h4>
+                        <h5>Hand-Built By Great Ideas</h5>
+                        <p class="about-copy">
+                            <strong>SY-INTELLI CONSULTING</strong> is an emerging group of young, honest and reliable
+                            individuals
+                            willing to go an
+                            extra mile to put a smile on the face of our clients. We consult in Technology, ICT
+                            Advisory services
+                            and IT and Security Audit for banks, saccos, Microfinance, Insurance, Manufacturing, NGOs,
+                            Government
+                            institutions, Oil & Gas and Telcos in Kenya and Rwanda.
+                            We provide a vibrant combination of strategic IT consultancy services and technology
+                            skills.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="../../static/img/about/7.jpg" class="img-fluid" id="heroImg" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-last">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>MITIGATE . SOLVE . ENHANCE</h2>
+                <p class="">Feedbacks from our happy users. Become one of them.
+                    <strong>SY-INTELLI CONSULTING</strong> is an emerging group of young, honest and reliable
+                    individuals
+                    willing to go an
+                    extra mile to put a smile on the face of our clients. We consult in Technology, ICT
+                    Advisory services
+                    and IT and Security Audit for banks, saccos, Microfinance, Insurance, Manufacturing, NGOs,
+                    Government
+                    institutions, Oil & Gas and Telcos in Kenya and Rwanda.
+                    We provide a vibrant combination of strategic IT consultancy services and technology
+                    skills.
+                </p>
+            </div>
+        </div>
+    </section>
+    {% include 'footer.html' %}
+</main>
+
+{% endblock %}

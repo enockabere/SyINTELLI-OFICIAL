@@ -155,11 +155,46 @@
 }
 
 #pricingTable {
-    background: url(../img/5.png);
-    background-repeat: no-repeat;
+    background: linear-gradient(to right, #1d64af, #600606);
 
 }
-
+.WhyCard{
+    background: transparent;
+    border-radius: 4px !important;
+    padding: 1rem 0rem 1rem 0rem;
+    border: 1px solid var(--bs-white);
+}
+.WhyCard h5{
+   color: white;
+   text-align: center;
+}
+.WhyCard:hover{
+    background: whitesmoke;
+}
+.WhyCard:hover h5{
+    color: #000;
+}
+.WhyCard:hover p{
+    color: #333;
+}
+.whyimg{
+    height: 80px;
+    width: 80px;
+    padding: 1rem;
+    background: var(--bs-secondary);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius:50%;
+}
+.whys a{
+    background: none;
+    color: var(--bs-cyan);
+    border: none;
+    outline: none;
+}
+.WhyCard p{
+    color: rgb(219, 219, 219);
+ }
 #team {
     margin-top: -2.5rem;
 }
@@ -546,4 +581,29 @@
     font-size: 1.2rem;
     margin-top: 1rem;
     font-weight:bold
+}
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+#heroImg{
+    animation: 1.2s ease-in-out 0s 1 slideInFromLeft;
+    z-index: -30;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 4px;
+    height: 400px;
+    width: 100%;
+    -webkit-filter: grayscale(50%); 
+    filter: grayscale(50%);
+}
+
+#particles{
+    background: url(../img/hero/1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }

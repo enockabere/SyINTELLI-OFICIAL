@@ -7,31 +7,12 @@
         <div class="bg-holder"
             style="background-image:url(../../static/img/hero/hero_bg.png);background-position:center;background-size:cover;">
         </div>
-        <style>
-            .all-alert {
-                margin-top: -13rem !important;
-            }
-        </style>
         <div class="container">
             <div class="row align-items-center min-vh-50 min-vh-sm-75">
                 <div class="col-md-5 col-lg-6 order-0 order-md-1">
-                    <img class="w-100" id="heroImg" src="../../static/img/hero/1.png" alt="..." />
-                    {% if messages %}
-                    {% for message in messages %}
-                    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-                    <div class="alert alert-dismissible fade show all-alert succ" role="alert">
-                        <strong>Successfully Sent!</strong>{{message}}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div id="particles">
+                        <!-- <img class="w-100" id="heroImg" src="../../static/img/hero/1.png" alt="..." /> -->
                     </div>
-                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
-                    <div class="alert alert-dismissible fade show all-alert warns" role="alert">
-                        <strong>Failed!</strong> {{message}}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-
-                    {% endif %}
-                    {% endfor %}
-                    {% endif %}
                 </div>
                 <div class="col-md-7 col-lg-6 text-md-start text-center heroTexts">
                     <h1 class="text-light fs-md-5 fs-lg-6">Industry Leading IT Services Solutions</h1>
@@ -128,24 +109,22 @@
                             We provide a vibrant combination of strategic IT consultancy services and technology
                             skills.
                         </p>
-                        <button class="btn btn-info">Learn More</button>
+                        <a href="{% url 'about' %}" class="btn btn-info">Learn More</a>
                     </div>
                 </div>
                 <div class="col-md-5 about-images">
                     <img class="w-100" src="../../static/img/about/1.png" alt="" />
-
-
                 </div>
             </div>
         </div>
     </section>
     <section class="pt-8 bg-soft-primary" id="services">
-
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-xxl-5 text-center mx-auto mb-5">
                     <h2>Customized Solutions for Every Business</h2>
-                    <p class="mb-5">Our service is always affordable for everyone.</p>
+                    <p class="mb-5">We Offer a Wide
+                        Variety of IT Services</p>
                 </div>
             </div>
             <div class="row">
@@ -238,83 +217,79 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-xxl-5 text-center mx-auto mb-5">
-                    <h2>Any Copy Goes Here</h2>
-                    <p class="mb-5 text-dark">Our service is always affordable for everyone. </p>
+                    <h2 class="text-light">WHY CHOOSE US</h2>
+                    <p class="mb-5 text-light">Our service is always affordable for everyone. </p>
                 </div>
             </div>
-            <div class="row h-100">
-                <div class="col-sm-6 col-xl-3 mb-3">
-                    <div class="card card-span shadow py-4 h-100 border-top border-4 border-primary">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card WhyCard h-100">
                         <div class="card-body">
-                            <div class="text-center"><img src="../../static/img/icons/cloud-hosting.png" alt="..." />
-                                <h5 class="my-3">Cybersecurity and IT reviews</h5>
-                                <ul class="list-unstyled">
-                                    <p>Project management, Quality Assurance, Post implementation reviews</p>
-                                </ul>
+                            <h5 class="card-title">Cyber Security</h5>
+                            <div class="whyimg mx-auto text-center">
+                                <img src="../../static/img/icons/cloud-hosting.png" class="img-fluid" alt="" srcset="">
                             </div>
-                        </div>
-                        <div class="border-top bg-white text-center pt-3 pb-0">
-                            <p class="mb-0">Get started at </p>
-                            <div class="d-flex justify-content-center">
-                                <h3 class="fw-normal">Kshs 1000</h3><span
-                                    class="d-flex align-items-center">/month</span>
+                            <p class="card-text">
+                                Our product design service lets you prototype, test and validate your ideas
+                            </p>
+
+                            <div class="whys">
+                                <a href="#" class="btn btn-primary"><i class="las la-arrow-right"></i> LEARN MORE</a>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-xl-3 mb-3">
-                    <div class="card card-span shadow py-4 h-100 border-top border-4 border-primary">
+                <div class="col-md-3">
+                    <div class="card WhyCard h-100">
                         <div class="card-body">
-                            <div class="text-center"><img src="../../static/img/icons/cloud-hosting.png" alt="..." />
-                                <h5 class="my-3">Cybersecurity and IT reviews</h5>
-                                <ul class="list-unstyled">
-                                    <p>Project management, Quality Assurance, Post implementation reviews</p>
-                                </ul>
+                            <h5 class="card-title">Cyber Security</h5>
+                            <div class="whyimg mx-auto text-center">
+                                <img src="../../static/img/icons/cloud-hosting.png" class="img-fluid" alt="" srcset="">
                             </div>
-                        </div>
-                        <div class="border-top bg-white text-center pt-3 pb-0">
-                            <p class="mb-0">Get started at </p>
-                            <div class="d-flex justify-content-center">
-                                <h3 class="fw-normal">Kshs 1000</h3><span
-                                    class="d-flex align-items-center">/month</span>
+                            <p class="card-text">
+                                Our product design service lets you prototype, test and validate your ideas
+                            </p>
+
+                            <div class="whys">
+                                <a href="#" class="btn btn-primary"><i class="las la-arrow-right"></i> LEARN MORE</a>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-xl-3 mb-3">
-                    <div class="card card-span shadow py-4 h-100 border-top border-4 border-primary">
+                <div class="col-md-3">
+                    <div class="card WhyCard h-100">
                         <div class="card-body">
-                            <div class="text-center"><img src="../../static/img/icons/cloud-hosting.png" alt="..." />
-                                <h5 class="my-3">Cybersecurity and IT reviews</h5>
-                                <ul class="list-unstyled">
-                                    <p>Project management, Quality Assurance, Post implementation reviews</p>
-                                </ul>
+                            <h5 class="card-title">Cyber Security</h5>
+                            <div class="whyimg mx-auto text-center">
+                                <img src="../../static/img/icons/cloud-hosting.png" class="img-fluid" alt="" srcset="">
                             </div>
-                        </div>
-                        <div class="border-top bg-white text-center pt-3 pb-0">
-                            <p class="mb-0">Get started at </p>
-                            <div class="d-flex justify-content-center">
-                                <h3 class="fw-normal">Kshs 1000</h3><span
-                                    class="d-flex align-items-center">/month</span>
+                            <p class="card-text">
+                                Our product design service lets you prototype, test and validate your ideas
+                            </p>
+
+                            <div class="whys">
+                                <a href="#" class="btn btn-primary"><i class="las la-arrow-right"></i> LEARN MORE</a>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-xl-3 mb-3">
-                    <div class="card card-span shadow py-4 h-100 border-top border-4 border-primary">
+                <div class="col-md-3">
+                    <div class="card WhyCard h-100">
                         <div class="card-body">
-                            <div class="text-center"><img src="../../static/img/icons/cloud-hosting.png" alt="..." />
-                                <h5 class="my-3">Cybersecurity and IT reviews</h5>
-                                <ul class="list-unstyled">
-                                    <p>Project management, Quality Assurance, Post implementation reviews</p>
-                                </ul>
+                            <h5 class="card-title">Cyber Security</h5>
+                            <div class="whyimg mx-auto text-center">
+                                <img src="../../static/img/icons/cloud-hosting.png" class="img-fluid" alt="" srcset="">
                             </div>
-                        </div>
-                        <div class="border-top bg-white text-center pt-3 pb-0">
-                            <p class="mb-0">Get started at </p>
-                            <div class="d-flex justify-content-center">
-                                <h3 class="fw-normal">Kshs 1000</h3><span
-                                    class="d-flex align-items-center">/month</span>
+                            <p class="card-text">
+                                Our product design service lets you prototype, test and validate your ideas
+                            </p>
+
+                            <div class="whys">
+                                <a href="#" class="btn btn-primary"><i class="las la-arrow-right"></i> LEARN MORE</a>
+
                             </div>
                         </div>
                     </div>
@@ -452,7 +427,7 @@
             </div>
         </div>
     </section>
-    <section class="cont" id="cont">
+    <!-- <section class="cont" id="cont">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -566,7 +541,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <section class="pb-lg-0 pt-md-8 py-0" id="partners">
         <div class="row">
             <div class="col-lg-6 col-xxl-5 text-center mx-auto mb-2">

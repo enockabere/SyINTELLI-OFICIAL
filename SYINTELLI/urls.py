@@ -20,3 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("landing.urls"))
 ]
+admin.site.site_header  =  "SY-INTELLI CONSULTING ADMIN" 
+admin.site.site_title  =  "SY-INTELLI CONSULTING ADMIN"
+admin.site.index_title  =  "SY-INTELLI CONSULTING ADMIN"

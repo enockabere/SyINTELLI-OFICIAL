@@ -1,7 +1,16 @@
 from django.contrib import admin
-from . models import ALL_Category, Offers
+from . models import Category, Offers
+from  django.contrib.auth.models  import  Group,User
 
 # Register your models here.
 
-admin.site.register(ALL_Category)
-admin.site.register(Offers)
+class  AllOffers(admin.ModelAdmin):
+    list_display = ('Name','Types','Description','Category')
+    search_fields = ('name','types','Category')
+    empty_value_display = '-none-'
+    list_per_page=25
+    
+admin.site.register(Category)
+admin.site.register(Offers,AllOffers)
+admin.site.unregister(Group)
+admin.site.unregister(User)

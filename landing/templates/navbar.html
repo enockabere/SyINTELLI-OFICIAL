@@ -18,13 +18,13 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             {% for res in all %}
-                            <li><a class="dropdown-item" href="{% url 'solution' res.id %}"><i
-                                        class="las la-angle-right"></i> {{res.category}}</a></li>
+                            <li><a class="dropdown-item text-dark" href="{% url 'solution' res.id %}"><i
+                                        class="las la-angle-right"></i> {{res.Category}}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#partners">Partners</a>
+                <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#partners">Blog</a>
                 </li>
                 <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#cont">Contact
                         Us</a></li>
