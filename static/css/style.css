@@ -377,10 +377,7 @@
 }
 
 .myForm {
-    background: url(../img/3.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(to right, #95c1e8, #1d64af);
     padding: 1.8rem;
 }
 

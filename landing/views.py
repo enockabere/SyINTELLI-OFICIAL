@@ -130,3 +130,6 @@ def contact(request,pk):
     return redirect('solution', pk=pk)    
 def about_us (request):
     return render(request,'about.html')
+
+def CaseStudy (request):
+    return render(request,'case.html')
