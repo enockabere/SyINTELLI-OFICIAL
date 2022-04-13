@@ -483,87 +483,67 @@
 }
 
 @media only screen and (max-width: 768px) {
-    #heroImg {
-        margin-top: 7rem;
-    }
 
-    #heroImgs {
-        padding-top: 7rem;
+    .home{
+        padding-top: 9rem;
+        height: auto;
     }
 
     .heroTexts {
         margin-top: 2rem;
     }
-
-    #solution {
-        max-height: 100vh;
+    .about-last{
+        margin-bottom: -8rem;
     }
+    .about-last{
+        margin-bottom: -8rem !important;
+    }
+
 
 }
 
 @media only screen and (max-width: 425px) {
-    #heroImg {
-        margin-top: 8rem;
-        height: 350px;
-        width: 350px;
-    }
 
-    #heroImgs {
+    #heroImg{
         display: none;
     }
-
-    .show-text {
-        padding-top: 7rem;
+    .about-last{
+        margin-bottom: -8rem;
+    }
+    .about-last{
+        margin-bottom: -8rem !important;
     }
 
-    #solution {
-        max-height: 100vh;
-    }
+
 }
 
 @media only screen and (max-width: 442px) {
-    #heroImg {
-        margin-top: 9rem;
-        height: 330px;
-        width: 330px;
-    }
-
-    #solution {
-        max-height: 100vh;
-    }
-
-    #heroImgs {
-        display: none;
-    }
-
-    .show-text {
-        padding-top: 9rem;
+    .home{
+        padding-top: 16rem;
     }
     .navss{
         display: none;
+    }
+    #heroImg{
+        display: none;
+    }
+    .about-last{
+        margin-bottom: -8rem !important;
     }
 }
 
 @media only screen and (max-width: 320px) {
-    #heroImg {
-        margin-top: 10rem;
-        height: 300px;
-        width: 300px;
-    }
-
-    #solution {
-        max-height: 100vh;
-    }
-
-    #heroImgs {
-        display: none;
-    }
-
-    .show-text {
-        padding-top: 9rem;
+    .home{
+        padding-top: 18rem;
     }
     .navss{
         display: none;
+    }
+    #heroImg{
+        display: none;
+    }
+    .about-last{
+        margin-bottom: -8rem !important;
     }
 }
 
@@ -579,24 +559,7 @@
     margin-top: 1rem;
     font-weight:bold
 }
-@keyframes slideInFromLeft {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-#heroImg{
-    animation: 1.2s ease-in-out 0s 1 slideInFromLeft;
-    z-index: -30;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 4px;
-    height: 400px;
-    width: 100%;
-    -webkit-filter: grayscale(50%); 
-    filter: grayscale(50%);
-}
+
 
 #particles{
     background: url(../img/hero/4.png);
