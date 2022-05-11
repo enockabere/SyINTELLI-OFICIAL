@@ -68,3 +68,102 @@
     font-weight: bold;
     padding-bottom: 1rem;
 }
+
+.modal .modal-content {
+    border: 0;
+    border-radius: 5px;
+}
+
+
+
+
+.modal.fade.modal-top-right .modal-dialog {
+    width: 100%;
+    position: absolute;
+    top: 0
+}
+
+.modal.fade.modal-bottom-right .modal-dialog {
+    width: 100%;
+    position: absolute;
+    bottom: 0
+}
+
+
+.modal.fade.modal-bottom-left .modal-dialog {
+    width: 100%;
+    position: absolute;
+    bottom: 0
+}
+
+
+
+.modal.fade.modal-bottom-center .modal-dialog {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0
+}
+
+
+.modal .close {
+    position: absolute;
+    z-index: 1;
+    right: 10px !important;
+    top: 15px !important;
+    height: 2.5rem;
+    width: 2.5rem;
+    background: transparent;
+    border-radius: none;
+    font-size: 1.8rem;
+    outline: none;
+    padding: 0
+}
+.modal .overlay {
+    background-color: rgba(0, 0, 0, .35)
+}
+
+.modal .overlay-light {
+    background-color: rgba(0, 0, 0, .15)
+}
+
+.modal .pull-up-lg {
+    margin-top: -70px
+}
+
+.modal .border-thick {
+    border-width: .3rem !important
+}
+
+.bg-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.pointer-events-none {
+    pointer-events: none
+}
+
+.m-h-20 {
+    min-height: 20vh
+}
+
+
+
+
+
+.btn-cstm-dark {
+    color: #fff;
+    background-color: #28304e;
+    border-color: #28304e
+}
+
+.btn-cstm-dark:hover {
+    color: #fff;
+    background-color: #1b2035;
+    border-color: #171b2c
+}
+
+
+

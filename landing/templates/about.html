@@ -15,25 +15,16 @@
                     <li class="nav-item px-2">
                         <a class="nav-link fw-medium active" href="{% url 'landing' %}">Home</a>
                     </li>
-                    <li>
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle drops" type="button" id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                What we do
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                {% for res in all %}
-                                <li><a class="dropdown-item" href="{% url 'solution' res.id %}"><i
-                                            class="las la-angle-right"></i> {{res.Category}}</a></li>
-                                {% endfor %}
-                            </ul>
-
-                        </div>
-                    </li>
-                    <li class="nav-item px-2"><a class="nav-link" href="{% url 'services' %}">Service
-                            Gallery</a>
-                    </li>
-                    <li class="nav-item px-2"><a class="nav-link" href="#">Blog</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            What we do
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                            {% for res in all %}
+                            <li><a class="dropdown-item" href="{% url 'solution' res.id %}">{{res.Category}}</a></li>
+                            {% endfor %}
+                        </ul>
                     </li>
                     <li class="nav-item px-2"><a class="nav-link" href="{% url 'contact' %}">Contact
                             Us</a></li>
@@ -71,16 +62,15 @@
                         <h4>About Us</h4>
                         <h5>Hand-Built By Great Ideas</h5>
                         <p class="about-copy">
-                            <strong>SY-INTELLI CONSULTING</strong> is an emerging group of young, honest and reliable
-                            individuals
-                            willing to go an
-                            extra mile to put a smile on the face of our clients. We consult in Technology, ICT
-                            Advisory services
-                            and IT and Security Audit for banks, saccos, Microfinance, Insurance, Manufacturing, NGOs,
-                            Government
-                            institutions, Oil & Gas and Telcos in Kenya and Rwanda.
-                            We provide a vibrant combination of strategic IT consultancy services and technology
-                            skills.
+                            <strong>SY-INTELLI CONSULTING</strong> is a group of professionals committed to
+                            offering our clients best in class services and products. We walk with our clients through
+                            the journey of improving processes and controls in the most efficient manner possible. We
+                            pride ourselves in consistently being adaptable to the ever changing technological and
+                            cybersecurity landscape and ensuring our clients are advised accordingly.
+                        </p>
+                        <p>
+                            Our team of consultants have a wealth of experience from various industries and are
+                            committed to offering exemplary services to our clients.
                         </p>
                     </div>
                 </div>
@@ -114,7 +104,7 @@
             <div class="row ">
                 <div class="col-md-6">
                     <div class="abouts-card">
-                        <h4>SY-INTELLI Mission</h4>
+                        <h4>Mission</h4>
                         <h5>Hand-Built By Great Ideas</h5>
                         <p class="about-copy">
                             <strong>SY-INTELLI CONSULTING</strong> is an emerging group of young, honest and reliable
@@ -136,7 +126,7 @@
             </div>
         </div>
     </section>
-    <section class="about-last">
+    <!-- <section class="about-last">
         <div class="row">
             <div class="col-lg-12">
                 <h2>MITIGATE . SOLVE . ENHANCE</h2>
@@ -154,7 +144,7 @@
                 </p>
             </div>
         </div>
-    </section>
+    </section> -->
     {% include 'footer.html' %}
 </main>
 {% endblock %}

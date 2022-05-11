@@ -204,7 +204,7 @@
 }
 
 #solution {
-    max-height: 90vh;
+    min-height: 100vh;
 }
 
 .all-alert {
@@ -270,7 +270,8 @@
 
 .accods {
     box-shadow: 0 40px 60px -20px rgba(12, 5, 62, 0.15);
-    border: solid 1px #e9e8f3;
+    border: 1px solid transparent;
+    outline: none !important;
 }
 
 .accods .cards {
@@ -279,7 +280,7 @@
 }
 
 .accods .cards:first-child {
-    border-bottom: solid 1px #e9e8f3;
+    border-bottom: solid 1px #342b9e;
 }
 
 .accods .cards:not(:first-of-type):not(:last-of-type) {
@@ -290,7 +291,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 1.6;
-    background-color: #fff;
+    background-color:linear-gradient(to right, #4e42b9,#e98223) !important;
     border-radius: 0;
     color: #261c6a;
     padding: 36px 32px;
@@ -347,8 +348,10 @@
     background: none;
     outline: none;
     box-shadow: none;
-    color: #BDBDBD;
-    font-weight: 500;
+    color: #BDBDBD !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    margin-top: 0.5rem;
 }
 
 .drops:hover {
@@ -374,11 +377,6 @@
     .navbar {
         background: var(--main--color) !important;
     }
-}
-
-.myForm {
-    background: linear-gradient(to right, #95c1e8, #1d64af);
-    padding: 1.8rem;
 }
 
 .form-label {

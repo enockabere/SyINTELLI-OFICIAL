@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+<script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
 <main class="main" id="top">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-4 d-block"
         data-navbar-on-scroll="data-navbar-on-scroll">
@@ -16,25 +18,17 @@
                     </li>
                     <li class="nav-item px-2"><a class="nav-link" href="{% url 'about' %}">About Us</a>
                     </li>
-                    <li>
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle drops" type="button" id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                What we do
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                {% for res in all %}
-                                <li><a class="dropdown-item" href="{% url 'solution' res.id %}"><i
-                                            class="las la-angle-right"></i> {{res.Category}}</a></li>
-                                {% endfor %}
-                            </ul>
-
-                        </div>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            What we do
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                            {% for res in all %}
+                            <li><a class="dropdown-item" href="{% url 'solution' res.id %}">{{res.Category}}</a></li>
+                            {% endfor %}
+                        </ul>
                     </li>
-                    <li class="nav-item px-2"><a class="nav-link" href="{% url 'services' %}">Services
-                            Gallery</a>
-                    </li>
-                    <li class="nav-item px-2"><a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item px-2"><a class="nav-link" href="{% url 'contact' %}">Contact
                             Us</a></li>
@@ -46,10 +40,10 @@
         <div class="bg-holder" style="background:linear-gradient(to right, #640404, #095fb8) !important;">
         </div>
         <div class="container">
-            <div class="row align-items-center min-vh-50 min-vh-sm-75">
+            <div class="row align-items-center min-vh-70 min-vh-sm-50">
                 <div class="col-md-5 col-lg-6 order-0 order-md-1">
                     <div id="particles">
-                        <!-- <img class="w-100" id="heroImg" src="../../static/img/hero/1.png" alt="..." /> -->
+
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-6 text-md-start text-center heroTexts">
@@ -57,7 +51,8 @@
                     <p class="text-light">Deep industry expertise, diversity in IT skill sets, tailored client
                         solutions and a
                         personal touch to client challenges. </p>
-                    <a class="btn btn-primary" href="#quote" role="button">Get Quote</a>
+                    <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#demoModal">Get
+                        Quote</a>
                 </div>
             </div>
         </div>
@@ -99,85 +94,44 @@
             </div>
         </div>
     </section>
-    <section class="quotes" id="quote">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="../../static/img/about/1.png" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-8">
-                    <div class="text-center mx-auto mb-5 ">
-                        <h2>Interested with any of this service?</h2>
-                        <p class="mt-3">Do you need to enhance efficiency by automating all your business processes into
-                            a
-                            single unified application/platform? Do you want to increase visibility across the entire
-                            organization to improve your decision-making process? </p>
-                    </div>
-                    <form id="QuoteForm" method="post" class="myForm">
-                        {% csrf_token %}
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" name="name" id="Qname">
-
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" id="Qemail">
-                            </div>
-                        </div>
-                        <div class="row  mb-3">
-                            <div class="col-md-12">
-                                <select class="form-select" name="service" id="service">
-                                    <option selected disabled value="">Select Service/Solution</option>
-                                    {% for res in emails %}
-                                    <option value="{{res.name}}">{{res.name}}</option>
-                                    {% endfor %}
-                                </select>
-                                <div class="invalid-feedback">
-                                    Field can't be Empty!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <label class="form-label">Comment</label>
-                                <textarea class="form-control" name="subject" id="subject" rows="3"></textarea>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-secondary">Send Request</button>
-
-                        <p id="response"></p>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="pb-lg-0 pt-md-8 py-0" id="partners">
         <div class="row">
             <div class="col-lg-6 col-xxl-5 text-center mx-auto mb-2">
                 <h2>Our Partners</h2>
-                <p class="mb-5">Feedbacks from our happy users. Become one of them. </p>
+                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut leo ligula, mattis ut mi
+                    sed, bibendum suscipit nisi. </p>
             </div>
         </div>
         <div class="container">
             <div class="row align-items-center justify-content-xl-between py-5 border-klean">
                 <div class="col-auto col-md-4 col-lg-auto my-3 text-xl-start"><img
-                        src="../../static/img/partners/a1.png" height="60" alt="..." /></div>
-                <div class="col-auto col-md-4 col-lg-auto my-3 text-xl-start"><img
-                        src="../../static/img/partners/a2.png" height="60" alt="..." /></div>
-                <div class="col-auto col-md-4 col-lg-auto my-3 text-xl-start"><img
-                        src="../../static/img/partners/a3.png" height="60" alt="..." /></div>
+                        src="../../static/img/partners/1.webp" height="60" alt="..." /></div>
+                <div class="col-auto col-md-4 col-lg-auto my-3 text-xl-start"><img src="../../static/img/partners/2.png"
+                        height="60" alt="..." /></div>
                 <div class="col-auto col-md-4 col-lg-auto my-3 text-xl-start"><img
                         src="../../static/img/partners/a4.png" height="60" alt="..." /></div>
-                <div class="col-auto col-md-4 col-lg-auto my-3 text-xl-start"><img
-                        src="../../static/img/partners/a5.png" height="60" alt="..." /></div>
             </div>
         </div>
     </section>
     {% include 'footer.html' %}
 </main>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Interested with any of this service?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     $(document).on('submit', '#QuoteForm', function (e) {
         e.preventDefault();
@@ -209,4 +163,60 @@
         }
     });
 </script>
+<div class="modal fade auto-off" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="demoModal"
+    aria-hidden="true">
+    <div class="modal-dialog animated zoomInDown modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 m-h-20 bg-img rounded-left"
+                        style="background-image: url('../../static/img/hero/3.png');background-position: center;background-size: cover;">
+                    </div>
+                    <div class="col-md-12">
+                        <h2 class="my-2">Request For Quotation</h2>
+                        <form id="QuoteForm" method="post" class="myForm">
+                            {% csrf_token %}
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" name="name" id="Qname">
+
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" id="Qemail">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <select class="form-select" name="service" id="service">
+                                        <option selected disabled value="">Select Service/Solution</option>
+                                        {% for res in emails %}
+                                        <option value="{{res.name}}">{{res.Name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Field can't be Empty!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label class="form-label">Comment</label>
+                                    <textarea class="form-control" name="subject" id="subject" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-secondary">Send Request</button>
+
+                            <p id="response"></p>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

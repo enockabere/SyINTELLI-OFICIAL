@@ -32,7 +32,7 @@ class caseStudy(models.Model):
     Description = models.TextField()
     
     class  Meta: 
-        verbose_name_plural  =  "Case Study"
+        verbose_name_plural  =  "Differentiator"
     
     def __str__(self):
         return str(self.title)

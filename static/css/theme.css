@@ -5231,12 +5231,12 @@ fieldset:disabled .btn {
   border-color: transparent;
 }
 
-.nav-tabs .nav-link.active,
+/* .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #F17228;
+  color: red;
   background-color: rgba(241, 114, 40, 0.15);
   border-color: transparent;
-}
+} */
 
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
@@ -5250,11 +5250,11 @@ fieldset:disabled .btn {
   border-radius: 0.5rem;
 }
 
-.nav-pills .nav-link.active,
+/* .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
   color: #FFFEFE;
   background-color: #A1B0FC;
-}
+} */
 
 .nav-fill>.nav-link,
 .nav-fill .nav-item {
@@ -5693,6 +5693,7 @@ fieldset:disabled .btn {
 
 .navbar-light .navbar-nav .nav-link {
   color: #BDBDBD !important;
+  font-weight: 700 !important;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,

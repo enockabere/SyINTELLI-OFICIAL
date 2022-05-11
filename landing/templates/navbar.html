@@ -10,26 +10,18 @@
                         aria-current="page" href="#home">Home</a></li>
                 <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#about">About Us</a>
                 </li>
-                <li>
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle drops" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            What we do
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            {% for res in all %}
-                            <li><a class="dropdown-item text-dark" href="{% url 'solution' res.id %}"><i
-                                        class="las la-angle-right"></i> {{res.Category}}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        What we do
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                        {% for res in all %}
+                        <li><a class="dropdown-item" href="{% url 'solution' res.id %}">{{res.Category}}</a></li>
+                        {% endfor %}
+                    </ul>
                 </li>
-                <li class="nav-item px-2"><a class="nav-link" href="{% url 'services' %}">
-                        Service
-                        Gallery</a>
-                </li>
-                <li class="nav-item px-2"><a class="nav-link" href="#partners">Blog</a>
-                </li>
+
                 <li class="nav-item px-2"><a class="nav-link" href="{% url 'contact' %}">Contact
                         Us</a></li>
 
