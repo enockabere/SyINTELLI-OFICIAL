@@ -270,7 +270,7 @@
 
 .accods {
     box-shadow: 0 40px 60px -20px rgba(12, 5, 62, 0.15);
-    border: 1px solid transparent;
+    border: 1px solid #342b9e !important;
     outline: none !important;
 }
 

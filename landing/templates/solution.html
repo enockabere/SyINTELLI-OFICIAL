@@ -115,54 +115,6 @@
     </section>
     {% include 'footer.html' %}
 </main>
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Interested with any of this service?</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-    $(document).on('submit', '#QuoteForm', function (e) {
-        e.preventDefault();
-        let name = $("#Qname").val()
-        let email = $("#Qemail").val()
-        let service = $("#service").val()
-        let subject = $("#subject").val()
-        if (name != '' && email != '' && service != '' && subject != '') {
-            $.ajax({
-                type: 'POST',
-                url: '{% url "solution" topic.id %}',
-                data: {
-                    name: name,
-                    email: email,
-                    service: service,
-                    subject: subject,
-                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
-                },
-                success: function () {
-                    $("p#response").append('Successfully Sent!');
-                    $("#name").val("");
-                    $("#email").val("");
-                    $("#service").val("");
-                    $("#subject").val("");
-                }
-            })
-        } else {
-            alert('Not sent! Missing Input!!');
-        }
-    });
-</script>
 <div class="modal fade auto-off" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="demoModal"
     aria-hidden="true">
     <div class="modal-dialog animated zoomInDown modal-dialog-centered" role="document">
@@ -173,7 +125,7 @@
                     <div class="col-md-12 m-h-20 bg-img rounded-left"
                         style="background-image: url('../../static/img/hero/3.png');background-position: center;background-size: cover;">
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12" style="background: whitesmoke !important;">
                         <h2 class="my-2">Request For Quotation</h2>
                         <form id="QuoteForm" method="post" class="myForm">
                             {% csrf_token %}
@@ -218,5 +170,37 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).on('submit', '#QuoteForm', function (e) {
+        e.preventDefault();
+        let name = $("#Qname").val()
+        let email = $("#Qemail").val()
+        let service = $("#service").val()
+        let subject = $("#subject").val()
+        if (name != '' && email != '' && service != '' && subject != '') {
+            $.ajax({
+                type: 'POST',
+                url: '{% url "solution" topic.id %}',
+                data: {
+                    name: name,
+                    email: email,
+                    service: service,
+                    subject: subject,
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                },
+                success: function () {
+                    $("p#response").append('Successfully Sent!');
+                    $("#name").val("");
+                    $("#email").val("");
+                    $("#service").val("");
+                    $("#subject").val("");
+                }
+            })
+        } else {
+            alert('Not sent! Missing Input!!');
+        }
+    });
+</script>
 
 {% endblock %}

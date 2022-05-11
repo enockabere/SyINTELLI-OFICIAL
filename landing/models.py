@@ -37,4 +37,26 @@ class caseStudy(models.Model):
     def __str__(self):
         return str(self.title)
     
+class Culture(models.Model):
+    title = models.CharField(max_length=1000,blank=True)
+    Content = models.TextField(blank=True)
+    image = models.ImageField(upload_to='img/',blank=True)
+    date_added = models.DateTimeField(auto_now_add=True)
     
+class Mission(models.Model):
+    title = models.CharField(max_length=1000,blank=True)
+    Content = models.TextField(blank=True)
+    image = models.ImageField(upload_to='img/',blank=True)
+    date_added = models.DateTimeField(auto_now_add=True)   
+    
+class Testimonial(models.Model):
+    Content = models.TextField(blank=True)
+    image = models.ImageField(upload_to='img/',blank=True)
+    testimonial = models.TextField(blank=True)
+    name = models.CharField(max_length=1000,blank=True)
+    date_added = models.DateTimeField(auto_now_add=True)  
+    
+class Partners(models.Model):
+    Content = models.TextField(blank=True)
+    image = models.ImageField(upload_to='img/',blank=True)
+    date_added = models.DateTimeField(auto_now_add=True) 
