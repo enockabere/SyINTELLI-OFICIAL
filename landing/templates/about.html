@@ -15,6 +15,7 @@
                     <li class="nav-item px-2">
                         <a class="nav-link fw-medium active" href="{% url 'landing' %}">Home</a>
                     </li>
+                    {% if all %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -26,6 +27,7 @@
                             {% endfor %}
                         </ul>
                     </li>
+                    {% endif %}
                     <li class="nav-item px-2"><a class="nav-link" href="{% url 'contact' %}">Contact
                             Us</a></li>
                 </ul>
@@ -78,6 +80,7 @@
                     <img src="../../static/img/about/5.jpg" class="img-fluid heroImg" alt="" srcset="">
                 </div>
             </div>
+            {% if culture %}
             <div class="row my-5">
                 <div class="col-md-6">
                     <img src="{{culture.image.url}}" class="img-fluid heroImg" id="heroImg" alt="" srcset="">
@@ -92,7 +95,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row ">
+            {% endif %}
+            {% if mission %}
+            <div class="row">
                 <div class="col-md-6">
                     <div class="abouts-card">
                         <h4>Mission</h4>
@@ -106,6 +111,7 @@
                     <img src="{{mission.image.url}}" class="img-fluid heroImg" alt="" srcset="">
                 </div>
             </div>
+            {% endif %}
         </div>
     </section>
     <!-- <section class="about-last">

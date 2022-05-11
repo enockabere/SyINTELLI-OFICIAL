@@ -4,17 +4,19 @@
         </div>
         <div class="container">
             <div class="row min-vh-75 min-vh-xl-50 pt-10">
+                {% if all %}
                 <div class="col-6 col-md-4 col-xl-3 mb-3">
                     <h5 class="lh-lg fw-bold text-white">
                         What We Do</h5>
                     <ul class="list-unstyled mb-md-4 mb-lg-0">
                         </li>
                         {% for res in all %}
-                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="{% url 'solution' res.id %}"><i
-                                    class="las la-angle-right"></i> {{res.Category}}</a></li>
+                        <li class="lh-lg"><a class="text-200 text-decoration-none" href="{% url 'solution' res.id %}">
+                                {{res.Category}}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
+                {% endif %}
                 <div class="col-6 col-md-4 col-xl-3 mb-3">
                     <h5 class="lh-lg fw-bold text-white">WORKING HOURS</h5>
                     <p class="text-light">We work 7 days a week, every day excluding major holidays. Contact us if you
