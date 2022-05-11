@@ -2,7 +2,7 @@ from email import message
 import threading
 from django.http import HttpResponse
 from django.shortcuts import redirect, render, HttpResponse
-from . models import Category, Offers,caseStudy
+from . models import Category, Offers,caseStudy, Culture,Mission
 from django.core.mail import send_mail, BadHeaderError, EmailMessage
 from  django.conf import settings
 from django.contrib import messages
@@ -21,7 +21,6 @@ class EmailThread(threading.Thread):
 # Create your views here.
 def landing(request):
     all = Category.objects.all()
-    
     study = caseStudy.objects.all()
     todays_date = date.today()
     year= todays_date.year
@@ -134,7 +133,9 @@ def about_us (request):
     todays_date = date.today()
     year= todays_date.year
     all = Category.objects.all()
-    ctx = {"year":year,"all":all}
+    culture = Culture.objects.last()
+    mission = Mission.objects.last()
+    ctx = {"year":year,"all":all,'culture':culture,"mission":mission}
     return render(request,'about.html',ctx)
 
 def CaseStudy (request,pk):
