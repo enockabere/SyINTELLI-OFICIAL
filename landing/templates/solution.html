@@ -73,27 +73,27 @@
             <div class="row">
                 {% for res in res %}
                 <div class="col-md-12">
-                    <div class="accordion-container">
-                        <div class="accordion accods" id="accordionExample">
-                            <div class="accordion-item cards">
-                                <div class="card-header" id="headingOne">
-                                    <span>{{res.Name}}</span>
-                                    <button data-bs-target="#acco{{res.id}}" aria-expanded="false"
-                                        class="accordion-button" data-bs-toggle="collapse" id="accs"></button>
-                                </div>
-                                <div id="acco{{res.id}}" class="accordion-collapse collapse"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        {{res.Description}}
-                                    </div>
-                                </div>
+                    <div class="card accordion-style">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <a class="btn-link collapsed text-left" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo{{res.id}}" aria-expanded="false"
+                                    aria-controls="collapseTwo{{res.id}}">
+                                    <i class="fa fa-plus main"></i><i
+                                        class="fa fa-angle-double-right mr-3"></i>{{res.Name}}
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo{{res.id}}" class="collapse fade" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body accordion-style2">
+                                <p>{{res.Description}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
-        </div>
     </section>
     <section class="pb-lg-0 pt-md-8 py-0" id="partners">
         <div class="row">
