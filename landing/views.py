@@ -112,7 +112,6 @@ def contact(request,pk):
         except ValueError:
             messages.error(request, "Not sent. Invalid Input, Try Again!!")
             return redirect('solution', pk=pk)
-    if name and email and phone and message:
         try:
             email_subject = 'General Enquiry'
             email_body = render_to_string('mails/enquiry.html', {
@@ -122,7 +121,7 @@ def contact(request,pk):
             "email":email
             })
             email = EmailMessage(subject=email_subject, body=email_body,
-                             from_email=settings.DEFAULT_FROM_EMAIL, to=['info@sy-intelli.com'])
+                             from_email=settings.DEFAULT_FROM_EMAIL, to=['maebaenock95@gmail.com'])
 
             EmailThread(email).start()
             return redirect('solution',pk=pk)  

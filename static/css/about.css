@@ -192,3 +192,15 @@
     background: transparent;
     outline: none !important;
 }
+.dropdown-menu {
+    background: transparent !important;
+    color: white;
+    border: none !important;
+}
+.dropdown-menu li a{
+    color: white !important;
+}
+.dropdown-menu li a:hover{
+    color: white !important;
+    background: var(--main3--);
+}
