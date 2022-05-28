@@ -3,7 +3,7 @@
 Sy-Intelli Consulting website 
 
 
-![views](static/img/2.png.png)
+![views](static/img/2.png)
 
 ### Live link
 Visit the application on ######
