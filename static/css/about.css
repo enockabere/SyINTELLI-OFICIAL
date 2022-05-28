@@ -204,3 +204,6 @@
     color: white !important;
     background: var(--main3--);
 }
+.tells a:hover{
+text-decoration: none;
+}
