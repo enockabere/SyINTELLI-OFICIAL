@@ -18,7 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("landing.urls"))
+    path("", include("landing.urls")),
+    path('summernote/', include('django_summernote.urls')),
 ]
 admin.site.site_header  =  "SY-INTELLI CONSULTING ADMIN" 
 admin.site.site_title  =  "SY-INTELLI CONSULTING ADMIN"
